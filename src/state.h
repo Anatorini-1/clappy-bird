@@ -17,6 +17,7 @@ struct GameState {
     int pipe_count;
     struct Pipe pipes[3];
     int score;
+    char score_text[4];
 };
 
 struct GameTextures {

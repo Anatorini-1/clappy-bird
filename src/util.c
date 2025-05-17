@@ -27,26 +27,14 @@ void decellerate(float* var, float decelleration) {
 
 void load_textures(struct GameTextures* textures) {
 
-    Image image;
-    Texture2D texture;
-
-    image = LoadImage("pipe_up.png");
-    texture = LoadTextureFromImage(image);
     textures->pipe_up = malloc(sizeof(Texture2D));
-    memcpy(textures->pipe_up, &texture, sizeof(Texture2D));
-
-    image = LoadImage("pipe_down.png");
-    texture = LoadTextureFromImage(image);
     textures->pipe_down = malloc(sizeof(Texture2D));
-    memcpy(textures->pipe_down, &texture, sizeof(Texture2D));
-
-    image = LoadImage("bird.png");
-    texture = LoadTextureFromImage(image);
     textures->bird = malloc(sizeof(Texture2D));
-    memcpy(textures->bird, &texture, sizeof(Texture2D));
-
-    image = LoadImage("background.png");
-    texture = LoadTextureFromImage(image);
     textures->background = malloc(sizeof(Texture2D));
-    memcpy(textures->background, &texture, sizeof(Texture2D));
+
+    *textures->pipe_up = LoadTextureFromImage(LoadImage("img/pipe_up.png"));
+    *textures->pipe_down = LoadTextureFromImage(LoadImage("img/pipe_down.png"));
+    *textures->bird = LoadTextureFromImage(LoadImage("img/bird.png"));
+    *textures->background =
+        LoadTextureFromImage(LoadImage("img/background.png"));
 }
